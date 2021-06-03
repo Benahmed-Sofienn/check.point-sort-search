@@ -1,0 +1,30 @@
+ALGORITHM Sorting_card
+VAR
+    v,i,j,k: INTEGER
+    arr : ARRAY_OF INTEGER[14];
+BEGIN
+    FOR i FROM 0 TO 13 STEP 1  DO
+        Write( entre the value of the card)
+        Read(v)
+        SWITCH (i) DO
+            case 0 : arr[0]=v
+            default : IF (v>arr[i-1]) THEN
+            arr[i]=v                
+            ELSE_IF (v<a[0]) THEN
+                FOR k FROM i TO 1 STEP -1  DO
+                    arr[k]=arr[k-1]
+                END_FOR
+                arr[0]=v
+            ELSE
+                FOR j FROM i-1 TO 0 STEP -1  DO
+                    IF (v>arr[j]) THEN
+                        FOR k FROM i TO j+2 STEP -1  DO
+                            arr[k]=arr[k-1]
+                        END_FOR
+                        arr[j+1]=v
+                    END_IF
+                END_FOR
+            END_IF
+        END_SWITCH
+        END_FOR
+END
